@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.fhlb</groupId>
+	<artifactId>cid-main</artifactId>
+	<version>1.0</version>
+	<packaging>pom</packaging>
+	<name>cid-main</name>
+	<description>CID Parent</description>
+	<modules>
+		<module>cid-common</module>
+		<module>cid-web</module>
+		<module>cid-metadata</module>
+	</modules>
+
+	<profiles>
+		<profile>
+			<id>env-prod</id>
+			<activation>
+				<activeByDefault>false</activeByDefault>
+			</activation>
+			<properties>
+				<activated.region>prod</activated.region>
+			</properties>
+		</profile>
+		<profile>
+			<id>env-dev</id>
+			<activation>
+				<property>
+					<name>env</name>
+					<value>dev</value>
+				</property>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<activated.region>dev</activated.region>
+			</properties>
+		</profile>
+	</profiles>
+
+</project>
