@@ -1,4 +1,4 @@
-package com.fhlb.cid;
+package com.test.cid;
 
 /**
  * Hello world!
